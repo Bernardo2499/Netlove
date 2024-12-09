@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netlove ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/netlove-logo.png" alt="Netlove Logo">
+            <h1>Netlove ❤️</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="catalog">
+            <h2>🎬 Nuestro Catálogo</h2>
+            <div class="movie">
+                <img src="images/titanic.jpg" alt="Titanic">
+                <h3>Titanic</h3>
+                <p>Seleccionada por: Osito bonito 🐻</p>
+                <p>Calificación: ⭐⭐⭐⭐</p>
+            </div>
+            <!-- Más películas se agregarán aquí dinámicamente -->
+        </section>
+
+        <section class="add-movie">
+            <h2>Añadir nueva película</h2>
+            <form id="movie-form">
+                <label for="title">Nombre de la película:</label>
+                <input type="text" id="title" placeholder="Ejemplo: Inception" required>
+
+                <label for="selector">Seleccionada por:</label>
+                <select id="selector">
+                    <option value="Osito bonito 🐻">Osito bonito 🐻</option>
+                    <option value="Princesita 👸🏻">Princesita 👸🏻</option>
+                </select>
+
+                <label for="rating">Calificación:</label>
+                <input type="number" id="rating" placeholder="1 a 5" min="1" max="5" required>
+
+                <button type="submit">Añadir</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
