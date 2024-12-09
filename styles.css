@@ -1,72 +1,107 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
     margin: 0;
     padding: 0;
-    background-color: #141414;
-    color: #fff;
 }
 
+/* Encabezado */
 header {
     background-color: #e50914;
-    padding: 1rem;
+    color: white;
+    padding: 10px 20px;
     text-align: center;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-header img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
 }
 
 header h1 {
+    font-size: 24px;
     margin: 0;
-    font-size: 2rem;
 }
 
-.catalog {
+/* Catálogo */
+#catalogo {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 10px;
+}
+
+#catalogo h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#peliculas {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
 }
 
-.movie {
-    background-color: #222;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 200px;
+.pelicula {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
     text-align: center;
+    width: 150px;
+    color: #fff;
 }
 
-.movie img {
-    width: 100%;
-    border-radius: 5px;
+.pelicula img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-.add-movie {
-    padding: 1rem;
+/* Formulario */
+#formulario {
+    margin: 20px auto;
+    max-width: 600px;
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#formulario h2 {
     text-align: center;
+    margin-bottom: 15px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
-input, select, button {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
+input, button {
+    padding: 10px;
     border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input {
+    background: #333;
+    color: white;
+}
+
+button {
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #ff1e22;
 }
