@@ -1,37 +1,27 @@
-// Selección de elementos
-const peliculasDiv = document.getElementById("peliculas");
-const nombreInput = document.getElementById("nombre");
-const seleccionadaPorInput = document.getElementById("seleccionadaPor");
-const calificacionInput = document.getElementById("calificacion");
-const añadirButton = document.getElementById("añadir");
+document.getElementById("añadir").addEventListener("click", function () {
+    const nombre = document.getElementById("nombre").value.trim();
+    const imagen = document.getElementById("imagen").value.trim();
+    const seleccionadaPor = document.getElementById("seleccionadaPor").value.trim();
+    const calificacion = document.getElementById("calificacion").value.trim();
 
-// Función para añadir una película
-añadirButton.addEventListener("click", () => {
-    const nombre = nombreInput.value.trim();
-    const seleccionadaPor = seleccionadaPorInput.value.trim();
-    const calificacion = parseInt(calificacionInput.value.trim());
-
-    // Validación
-    if (!nombre || !seleccionadaPor || isNaN(calificacion) || calificacion < 1 || calificacion > 5) {
+    if (!nombre || !imagen || !seleccionadaPor || !calificacion || calificacion < 1 || calificacion > 5) {
         alert("Por favor, completa todos los campos correctamente.");
         return;
     }
 
-    // Crear tarjeta de película
-    const peliculaDiv = document.createElement("div");
-    peliculaDiv.classList.add("pelicula");
-    peliculaDiv.innerHTML = `
-        <img src="https://via.placeholder.com/150x200?text=${encodeURIComponent(nombre)}" alt="${nombre}">
-        <h3>${nombre}</h3>
-        <p>Seleccionada por: ${seleccionadaPor}</p>
-        <p>Calificación: ${"⭐".repeat(calificacion)}</p>
+    const peliculasDiv = document.getElementById("peliculas");
+    const peliculaHTML = `
+        <div class="pelicula">
+            <img src="${imagen}" alt="${nombre}">
+            <h3>${nombre}</h3>
+            <p>Seleccionada por: ${seleccionadaPor}</p>
+            <p>Calificación: ${"⭐".repeat(calificacion)}</p>
+        </div>
     `;
+    peliculasDiv.innerHTML += peliculaHTML;
 
-    // Añadir al catálogo
-    peliculasDiv.appendChild(peliculaDiv);
-
-    // Limpiar formulario
-    nombreInput.value = "";
-    seleccionadaPorInput.value = "";
-    calificacionInput.value = "";
+    document.getElementById("nombre").value = "";
+    document.getElementById("imagen").value = "";
+    document.getElementById("seleccionadaPor").value = "";
+    document.getElementById("calificacion").value = "";
 });
