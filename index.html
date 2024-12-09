@@ -4,37 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netlove ❤️</title>
-    <link rel="stylesheet" href="styles.css.txt">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="netlove_logo.png" alt="Logo de Netlove">
-            <h1>Netlove ❤️</h1>
-        </div>
+        <div class="logo">Netlove ❤️</div>
     </header>
     <main>
-        <section id="catalogo">
-            <h2>🎥 Nuestro Catálogo</h2>
-            <div id="peliculas"></div>
+        <section class="catalogo">
+            <h2>Nuestro Catálogo</h2>
+            <div id="peliculas" class="peliculas"></div>
         </section>
-        <section id="formulario">
-            <h2>➕ Añadir nueva película</h2>
-            <form id="nueva-pelicula">
-                <label for="nombre">Nombre de la película:</label>
-                <input type="text" id="nombre" placeholder="Ejemplo: Inception">
-                
-                <label for="seleccionadaPor">Seleccionada por:</label>
-                <input type="text" id="seleccionadaPor" placeholder="Tu nombre">
-                
-                <label for="calificacion">Calificación:</label>
-                <input type="number" id="calificacion" placeholder="Del 1 al 5" min="1" max="5">
-                
-                <button type="button" id="añadir">Añadir</button>
-            </form>
+        <section class="formulario">
+            <h2>Añadir nueva película</h2>
+            <input type="text" id="nombre" placeholder="Nombre de la película">
+            <input type="text" id="imagen" placeholder="URL de la imagen de la película">
+            <input type="text" id="seleccionadaPor" placeholder="Seleccionada por">
+            <input type="number" id="calificacion" placeholder="Calificación (1-5)" min="1" max="5">
+            <button id="añadir">Añadir</button>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2024 Netlove. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
-<script src="script.js.txt"></script>
 </html>
-
