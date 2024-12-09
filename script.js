@@ -1,23 +1,37 @@
-document.getElementById('movie-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// Selección de elementos
+const peliculasDiv = document.getElementById("peliculas");
+const nombreInput = document.getElementById("nombre");
+const seleccionadaPorInput = document.getElementById("seleccionadaPor");
+const calificacionInput = document.getElementById("calificacion");
+const añadirButton = document.getElementById("añadir");
 
-    const title = document.getElementById('title').value;
-    const selector = document.getElementById('selector').value;
-    const rating = document.getElementById('rating').value;
+// Función para añadir una película
+añadirButton.addEventListener("click", () => {
+    const nombre = nombreInput.value.trim();
+    const seleccionadaPor = seleccionadaPorInput.value.trim();
+    const calificacion = parseInt(calificacionInput.value.trim());
 
-    const catalog = document.querySelector('.catalog');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
+    // Validación
+    if (!nombre || !seleccionadaPor || isNaN(calificacion) || calificacion < 1 || calificacion > 5) {
+        alert("Por favor, completa todos los campos correctamente.");
+        return;
+    }
 
-    movie.innerHTML = `
-        <img src="images/default.jpg" alt="${title}">
-        <h2>${title}</h2>
-        <p>Seleccionada por: ${selector}</p>
-        <p>Calificación: ${'⭐'.repeat(rating)}</p>
+    // Crear tarjeta de película
+    const peliculaDiv = document.createElement("div");
+    peliculaDiv.classList.add("pelicula");
+    peliculaDiv.innerHTML = `
+        <img src="https://via.placeholder.com/150x200?text=${encodeURIComponent(nombre)}" alt="${nombre}">
+        <h3>${nombre}</h3>
+        <p>Seleccionada por: ${seleccionadaPor}</p>
+        <p>Calificación: ${"⭐".repeat(calificacion)}</p>
     `;
 
-    catalog.appendChild(movie);
+    // Añadir al catálogo
+    peliculasDiv.appendChild(peliculaDiv);
 
-    // Limpiar el formulario
-    document.getElementById('movie-form').reset();
+    // Limpiar formulario
+    nombreInput.value = "";
+    seleccionadaPorInput.value = "";
+    calificacionInput.value = "";
 });
