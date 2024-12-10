@@ -147,3 +147,17 @@ footer {
     justify-content: center;  /* Esto centra las estrellas */
     gap: 10px;
 }
+/* Centrar los títulos */
+.calificacion-titulo,
+.seleccionada-por-titulo,
+.sube-poster-titulo {
+    margin-bottom: 10px;
+    text-align: center;  /* Centra los títulos */
+}
+
+/* Asegurarse de que las estrellas se centren también */
+.estrellas {
+    display: flex;
+    justify-content: center;  /* Centra las estrellas */
+    gap: 10px;
+}
