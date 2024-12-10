@@ -94,19 +94,29 @@ button:hover {
 
 /* Estrellas */
 .estrellas {
-    display: flex;
-    justify-content: space-between;
+    direction: rtl;
+    display: inline-block;
+}
+
+.estrellas input {
+    display: none;
 }
 
 .estrellas label {
-    cursor: pointer;
-    font-size: 24px;
-    margin: 5px;
     color: #ccc; /* Estrellas gris por defecto */
+    font-size: 40px;
+    cursor: pointer;
+    padding: 0 5px;
 }
 
-.estrellas input:checked ~ label {
+.estrellas input:checked ~ label,
+.estrellas input:checked ~ label ~ label {
     color: gold; /* Estrellas doradas cuando se seleccionan */
+}
+
+.estrellas input:not(:checked) ~ label:hover,
+.estrellas input:not(:checked) ~ label:hover ~ label {
+    color: gold; /* Efecto de hover dorado */
 }
 
 /* Footer */
