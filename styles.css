@@ -41,7 +41,7 @@ h2 {
     background-color: #222;
     border-radius: 10px;
     overflow: hidden;
-    width: 320px; /* Portada más grande */
+    width: 320px;
     text-align: center;
 }
 
@@ -96,6 +96,7 @@ button:hover {
 .estrellas {
     direction: rtl;
     display: inline-block;
+    font-size: 40px;
 }
 
 .estrellas input {
@@ -103,20 +104,24 @@ button:hover {
 }
 
 .estrellas label {
-    color: #ccc; /* Estrellas gris por defecto */
-    font-size: 40px;
+    color: #ccc; /* Estrellas grises */
     cursor: pointer;
     padding: 0 5px;
 }
 
-.estrellas input:checked ~ label,
-.estrellas input:checked ~ label ~ label {
+.estrellas input:checked ~ label {
     color: gold; /* Estrellas doradas cuando se seleccionan */
 }
 
-.estrellas input:not(:checked) ~ label:hover,
-.estrellas input:not(:checked) ~ label:hover ~ label {
-    color: gold; /* Efecto de hover dorado */
+.estrellas input:checked ~ input:checked ~ label {
+    color: gold; /* Para las estrellas anteriores a la seleccionada */
+}
+
+/* Hover dorado */
+.estrellas label:hover,
+.estrellas input:checked ~ label:hover,
+.estrellas label:hover ~ label {
+    color: gold;
 }
 
 /* Footer */
