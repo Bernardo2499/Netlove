@@ -135,3 +135,15 @@ footer {
 .calificacion-titulo {
     margin-bottom: 10px;
 }
+/* Centrar el título de calificación */
+.calificacion-titulo {
+    margin-bottom: 10px;
+    text-align: center;  /* Esto centra el título */
+}
+
+/* Asegurarse de que la sección de calificación esté centrada */
+.estrellas {
+    display: flex;
+    justify-content: center;  /* Esto centra las estrellas */
+    gap: 10px;
+}
