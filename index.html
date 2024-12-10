@@ -18,9 +18,36 @@
         <section class="formulario">
             <h2>Añadir nueva película</h2>
             <input type="text" id="nombre" placeholder="Nombre de la película">
-            <input type="text" id="imagen" placeholder="URL de la imagen de la película">
-            <input type="text" id="seleccionadaPor" placeholder="Seleccionada por">
-            <input type="number" id="calificacion" placeholder="Calificación (1-5)" min="1" max="5">
+            <label for="imagen">Sube la portada de la película:</label>
+            <input type="file" id="imagen" accept="image/*">
+            <label for="seleccionadaPor">Seleccionada por:</label>
+            <select id="seleccionadaPor">
+                <option value="Princesita 👸🏻">Princesita 👸🏻</option>
+                <option value="Osito bonito 🐻">Osito bonito 🐻</option>
+            </select>
+            <label for="calificacion">Calificación:</label>
+            <div id="calificacion" class="estrellas">
+                <label>
+                    <input type="radio" name="calificacion" value="1">
+                    ⭐
+                </label>
+                <label>
+                    <input type="radio" name="calificacion" value="2">
+                    ⭐⭐
+                </label>
+                <label>
+                    <input type="radio" name="calificacion" value="3">
+                    ⭐⭐⭐
+                </label>
+                <label>
+                    <input type="radio" name="calificacion" value="4">
+                    ⭐⭐⭐⭐
+                </label>
+                <label>
+                    <input type="radio" name="calificacion" value="5">
+                    ⭐⭐⭐⭐⭐
+                </label>
+            </div>
             <button id="añadir">Añadir</button>
         </section>
     </main>
