@@ -41,7 +41,7 @@ h2 {
     background-color: #222;
     border-radius: 10px;
     overflow: hidden;
-    width: 300px;
+    width: 320px; /* Portada más grande */
     text-align: center;
 }
 
@@ -102,10 +102,11 @@ button:hover {
     cursor: pointer;
     font-size: 24px;
     margin: 5px;
+    color: #ccc; /* Estrellas gris por defecto */
 }
 
-.estrellas input {
-    display: none;
+.estrellas input:checked ~ label {
+    color: gold; /* Estrellas doradas cuando se seleccionan */
 }
 
 /* Footer */
